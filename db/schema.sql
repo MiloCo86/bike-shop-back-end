@@ -6,10 +6,10 @@ CREATE DATABASE bides_dev;
 CREATE TABLE bikes (
     id SERIAL PRIMARY KEY,
     brand TEXT NOT NULL,
-    year INTEGER,
-    price INTEGER,
-    bikeType TEXT,
+    year DATE,
+    price FLOAT NOT NULL,
+    bike_type TEXT NOT NULL,
     frame TEXT,
-    bikeWeight FLOAT,
-    newBike: boolean
+    bike_weight FLOAT,
+    is_new: boolean NOT NULL
 );
