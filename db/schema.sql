@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS bikes_dev;
-CREATE DATABASE bides_dev;
+CREATE DATABASE bikes_dev;
 
 \c bikes_dev;
 
