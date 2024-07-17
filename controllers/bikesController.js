@@ -3,7 +3,7 @@ const bikes = express.Router()
 
 //import queries
 
-const { getAllBikes ,getBike, addNewBike, deleteBike, updateBike } = require('../db-queries/bikes')
+const { getAllBikes ,getBike, addBike, deleteBike, updateBike } = require('../db-queries/bikes')
 
 //import validations
 
@@ -31,8 +31,8 @@ bikes.get('/:id', async (req,res)=>{
 })
 
 bikes.post("/", async (req, res) => {
-  const bike = await addNewBike(req.body);
-  res.json(color);
+  const bike = await addBike(req.body);
+  res.json(bike);
 });
 
 bikes.delete("/:id", async (req, res) => {
