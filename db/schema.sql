@@ -11,5 +11,5 @@ CREATE TABLE bikes (
     bike_type TEXT NOT NULL,
     frame TEXT,
     bike_weight FLOAT,
-    is_new: BOOLEAN NOT NULL
+    is_new BOOLEAN NOT NULL
 );
