@@ -2,14 +2,14 @@
   "name": "bike-shop-back-end",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "db:init": "psql -U postgres -f db/schema.sql",
     "db:seed": "psql -U postgres -f db/seed.sql",
     "start": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Brendan O'Brien Camilo Paéz and Vianel De La Cruz",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
