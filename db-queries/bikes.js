@@ -2,7 +2,7 @@ const db = require('../db/dbConfig')
 
 
 
-const getallBikes = async () => {
+const getAllBikes = async () => {
     try{
         const allBikes = await db.any('SELECT * FROM bikes')
         return allBikes
@@ -23,7 +23,7 @@ const getBike = async (id) => {
 
 const addBike = async (bike) => {
     try{
-        const newBike = await db.one('INSERT INTO bikes (brand, year, price, bikeType, frame, bike_weight, is_new) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *', [bike.brand, bike.year, bike.price, bike.bikeType, bike.frame, bike.bike_weight, bike.is_new])
+        const newBike = await db.one('INSERT INTO bikes (brand, year, price, bike_type, frame, bike_weight, is_new) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *', [bike.brand, bike.year, bike.price, bike.bike_type, bike.frame, bike.bike_weight, bike.is_new])
         return newBike
 
         } catch (error){
@@ -33,7 +33,7 @@ const addBike = async (bike) => {
 
 const updateBike = async (id, bike) => {
     try{
-        const updatedBike = await db.one('UPDATE bikes SET brand = $1, year = $2, price = $3, bikeType = $4, frame = $5, bike_weight = $6, is_new = $7 WHERE id = $8 RETURNING *', [bike.brand, bike.year, bike.price, bike.bikeType, bike.frame, bike.bike_weight, bike.is_new, id])
+        const updatedBike = await db.one('UPDATE bikes SET brand = $1, year = $2, price = $3, bike_type = $4, frame = $5, bike_weight = $6, is_new = $7 WHERE id = $8 RETURNING *', [bike.brand, bike.year, bike.price, bike.bike_type, bike.frame, bike.bike_weight, bike.is_new, id])
         return updatedBike
 
         } catch (error){
@@ -54,4 +54,4 @@ const deleteBike = async (id) => {
 
 
 
-module.exports = {getallBikes, getBike, addBike, updateBike, deleteBike}
+module.exports = {getAllBikes, getBike, addBike, updateBike, deleteBike}
