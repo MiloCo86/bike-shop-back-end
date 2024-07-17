@@ -6,7 +6,7 @@ CREATE DATABASE bikes_dev;
 CREATE TABLE bikes (
     id SERIAL PRIMARY KEY,
     brand TEXT NOT NULL,
-    year DATE,
+    year INTEGER,
     price FLOAT NOT NULL,
     bike_type TEXT NOT NULL,
     frame TEXT,
