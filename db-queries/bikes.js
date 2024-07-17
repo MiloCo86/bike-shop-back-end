@@ -23,7 +23,7 @@ const getBike = async (id) => {
 
 const addBike = async (bike) => {
     try{
-        const newBike = await db.one('INSERT INTO bikes (brand, year, price, bikeType, frame, bike_weight, is_new) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *', bike)
+        const newBike = await db.one('INSERT INTO bikes (brand, year, price, bikeType, frame, bike_weight, is_new) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *', [bike.brand, bike.year, bike.price, bike.bikeType, bike.frame, bike.bike_weight, bike.is_new])
         return newBike
 
         } catch (error){
