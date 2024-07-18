@@ -33,7 +33,7 @@ const addBike = async (bike) => {
 
 const updateBike = async (id, bike) => {
     try{
-        const updatedBike = await db.one('UPDATE bikes SET make = $1, model = $2 year = $3, price = $4, bike_type = $5, frame = $6, bike_weight = $7, is_new = $8, in_stock = $9, img_url = $10 WHERE id = $11 RETURNING *', [bike.make, bike.model, bike.year, bike.price, bike.bike_type, bike.frame, bike.bike_weight, bike.is_new, bike.in_stock, bike.img_url, id])
+        const updatedBike = await db.one('UPDATE bikes SET make = $1, model = $2, year = $3, price = $4, bike_type = $5, frame = $6, bike_weight = $7, is_new = $8, in_stock = $9, img_url = $10 WHERE id = $11 RETURNING *', [bike.make, bike.model, bike.year, bike.price, bike.bike_type, bike.frame, bike.bike_weight, bike.is_new, bike.in_stock, bike.img_url, id])
         return updatedBike
 
         } catch (error){
