@@ -45,4 +45,4 @@ const checkStock = (req, res, next) => {
     }
 }
 
-module.exports = { checkBrand, checkYear, checkPrice, checkWeight, checkStock }
+module.exports = { checkMake, checkYear, checkPrice, checkWeight, checkStock }
