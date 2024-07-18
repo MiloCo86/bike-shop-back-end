@@ -3,7 +3,7 @@ const checkBrand = (req, res, next) => {
         if (brand) {
             next();
         } else {
-            res.status(400).json({ error: "Name of bike is required."})
+            res.status(400).json({ error: "Name of bike manufacturer is required."})
         }
 };
 
@@ -11,10 +11,10 @@ const checkYear = (req, res, next) => {
     const { year } = req.body;
 
     let today = new Date();
-        if (typeof year === Number && year > 0 && year < Number(today.getFullYear()) ) {
+        if (typeof year === "number" && year > 0 && year <= Number(today.getFullYear()) ) {
             next();
         } else {
-            res.status(400).json({error: `Year must be a four digit integer greater than zero and less than ${today.getFullYear}`})
+            res.status(400).json({error: `Year must be a four digit integer greater than zero and less than or including this year`})
         }
 }
 
