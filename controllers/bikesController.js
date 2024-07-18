@@ -7,6 +7,7 @@ const { getAllBikes ,getBike, addBike, deleteBike, updateBike } = require('../db
 
 //import validations
 
+const { checkBrand, checkYear, checkPrice, checkWeight } = require('../validations/checkBikes')
 
 // Index Routes: gets all bikes
 // localhost:4001/bikes/
@@ -30,7 +31,7 @@ bikes.get('/:id', async (req,res)=>{
   }
 })
 
-bikes.post("/", async (req, res) => {
+bikes.post("/", checkBrand, checkYear, checkPrice, checkWeight, async (req, res) => {
   const bike = await addBike(req.body);
   res.json(bike);
 });
