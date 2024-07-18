@@ -23,7 +23,7 @@ const getBike = async (id) => {
 
 const addBike = async (bike) => {
     try{
-        const newBike = await db.one('INSERT INTO bikes (brand, year, price, bike_type, frame, bike_weight, is_new) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *', [bike.brand, bike.year, bike.price, bike.bike_type, bike.frame, bike.bike_weight, bike.is_new])
+        const newBike = await db.one('INSERT INTO bikes (make, model, year, price, bike_type, frame, bike_weight, is_new, in_stock, img_url) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING *', [bike.make, bike.model, bike.year, bike.price, bike.bike_type, bike.frame, bike.bike_weight, bike.is_new, bike.in_stock, bike.img_url])
         return newBike
 
         } catch (error){
@@ -33,7 +33,7 @@ const addBike = async (bike) => {
 
 const updateBike = async (id, bike) => {
     try{
-        const updatedBike = await db.one('UPDATE bikes SET brand = $1, year = $2, price = $3, bike_type = $4, frame = $5, bike_weight = $6, is_new = $7 WHERE id = $8 RETURNING *', [bike.brand, bike.year, bike.price, bike.bike_type, bike.frame, bike.bike_weight, bike.is_new, id])
+        const updatedBike = await db.one('UPDATE bikes SET make = $1, model = $2 year = $3, price = $4, bike_type = $5, frame = $6, bike_weight = $7, is_new = $8, in_stock = $9, img_url = $10 WHERE id = $11 RETURNING *', [bike.make, bike.model, bike.year, bike.price, bike.bike_type, bike.frame, bike.bike_weight, bike.is_new, bike.in_stock, bike.img_url, id])
         return updatedBike
 
         } catch (error){

@@ -5,11 +5,14 @@ CREATE DATABASE bikes_dev;
 
 CREATE TABLE bikes (
     id SERIAL PRIMARY KEY,
-    brand TEXT NOT NULL,
+    make TEXT NOT NULL,
+    model TEXT NOT NULL,
     year INTEGER,
     price FLOAT NOT NULL,
     bike_type TEXT NOT NULL,
     frame TEXT,
     bike_weight FLOAT,
-    is_new BOOLEAN NOT NULL
+    is_new BOOLEAN NOT NULL,
+    in_stock INTEGER NOT NULL,
+    img_url TEXT
 );
