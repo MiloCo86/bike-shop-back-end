@@ -1,33 +1,66 @@
 # bike-shop-back-end
 ## Description 🪧
 
-Description here
+A back-end application for a bike shop inventory management system. It provides a RESTful API for managing bike records, including functionalities to view, add, update, and delete bikes from the inventory.
 
 ## Authors 🧑‍💻
 
 Brendan O'Brien
-Vianel De La Cruz
 Camilo Paez
+Vianel De La Cruz
+
+## Technologies Used 🛠️
+
+- Node.js
+- Express.js
+- PostgreSQL
 
 
 ## Scripts ⌨️
 
+`npm start`: Start the server
+`db:init`: Initialize the database
+`db:seed`: Add initial values for testing
 
-`db:init`: start the database
+## How It Works? 📦
 
-`db:seed`: add some initials values for test purpose
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. Set up your PostgreSQL database
+4. Run `npm run db:init` to initialize the database
+5. Run `npm run db:seed` to add sample data 
+
+## Data Endpoints 🚀
+
+- `GET /bikes`: Get all of the bikes
+- `GET /bikes/:id`: Get a specific bike
+- `POST /bikes`: Add a new bike
+- `PUT /bikes/:id`: Update a bike
+- `DELETE /bikes/:id`: Delete a bike
 
 ## Input ⬇️
 
-For the input you will need to send a json object with the next values:
+To add a new bike or update an existing one, send a JSON object in the request body, including both required and optional properties as detailed below:
 
-**brand** : brand of the brand of the bike `*can't be empty`
+- `brand`: Brand of the bike **(required, non-empty string)**
+- `year`: Year the bike was made **(MM-DD-YYYY format)**
+- `price`: Price of the bike **(required, number)**
+- `bike_type`: Type of bike **(required, string)**
+- `frame`: Frame material **(string)**
+- `bike_weight`: Weight of the bike in kg **(number)**
+- `is_new`: Whether the bike is new or used **(required, boolean)**
 
-**year**: what year the bike was made, should be a Year-Date type
+## Example JSON 📄
 
-**price**:
-
-## Example 📄
-
-
+```json
+{
+    "brand": "Trek",
+    "year": "2023-01-01",
+    "price": 799.99,
+    "bike_type": "Mountain",
+    "frame": "Aluminum",
+    "bike_weight": 13.5,
+    "is_new": true
+}
+```
 
