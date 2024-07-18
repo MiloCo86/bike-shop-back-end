@@ -50,7 +50,7 @@ To add a new bike or update an existing one, send a JSON object in the request b
 - `frame`: Frame material **(string)**
 - `bike_weight`: Weight of the bike in kg **(number)**
 - `is_new`: Whether the bike is new or used **(required, boolean)**
-- `in_stock`: Whether the bike is currently in stock **(number)**
+- `in_stock`: Whether the bike is currently in stock **(required, number)**
 - `img_url`: The url of the bike image **(string)**
 
 ## Example JSON 📄
