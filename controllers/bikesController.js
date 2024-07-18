@@ -52,9 +52,4 @@ bikes.put("/:id", checkMake, checkYear, checkPrice, checkWeight, checkStock, asy
   res.status(200).json(updatedBike);
 });
 
-
-
-
-
-
 module.exports = bikes;
