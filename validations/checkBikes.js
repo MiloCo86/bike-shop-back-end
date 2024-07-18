@@ -38,7 +38,7 @@ const checkPrice = (req, res, next) => {
 
 const checkStock = (req, res, next) => {
     const { in_stock } = req.body;
-    if (in_stock > 0) {
+    if (in_stock >= 0) {
         next();
     } else {
         res.status(400).json({ error: "Stock must be greater than 0"})
