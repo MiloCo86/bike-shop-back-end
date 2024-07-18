@@ -42,25 +42,31 @@ Vianel De La Cruz
 
 To add a new bike or update an existing one, send a JSON object in the request body, including both required and optional properties as detailed below:
 
-- `brand`: Brand of the bike **(required, non-empty string)**
-- `year`: Year the bike was made **(MM-DD-YYYY format)**
+- `make`: Brand of the bike **(required, non-empty string)**
+- `model`: The model of the bike **(required, non-empty string)**
+- `year`: Year the bike was made **(YYYY format)**
 - `price`: Price of the bike **(required, number)**
 - `bike_type`: Type of bike **(required, string)**
 - `frame`: Frame material **(string)**
 - `bike_weight`: Weight of the bike in kg **(number)**
 - `is_new`: Whether the bike is new or used **(required, boolean)**
+- `in_stock`: Whether the bike is currently in stock **(number)**
+- `img_url`: The url of the bike image **(string)**
 
 ## Example JSON 📄
 
 ```json
 {
-    "brand": "Trek",
-    "year": "2023-01-01",
-    "price": 799.99,
+    "make": "Trek",
+    "model": "Fx-1",
+    "year": "2011",
+    "price": 399.99,
     "bike_type": "Mountain",
     "frame": "Aluminum",
     "bike_weight": 13.5,
-    "is_new": true
+    "is_new": true,
+    "in_stock": true,
+    "img_url": "http:/samplestring/test-img.png"
 }
 ```
 
