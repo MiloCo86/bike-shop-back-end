@@ -47,7 +47,7 @@ bikes.delete("/:id", async (req, res) => {
 });
 
 bikes.put("/:id", checkMake, checkYear, checkPrice, checkWeight, checkStock, async (req, res) => {
-  const { id } = req.params;
+  const { id } = await req.params;
   const updatedBike = await updateBike(id, req.body);
   res.status(200).json(updatedBike);
 });
