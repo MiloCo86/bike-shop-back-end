@@ -3,7 +3,7 @@ const bikes = express.Router()
 
 //import queries
 
-const { getAllBikes ,getBike, addBike, deleteBike, updateBike } = require('../db-queries/bikes')
+const { getAllBikes ,getBike, addBike, deleteBike, updateBike, getNewBikes, getUsedBikes } = require('../db-queries/bikes')
 
 //import validations
 
@@ -13,13 +13,31 @@ const { checkMake, checkYear, checkPrice, checkWeight, checkStock } = require('.
 // localhost:4001/bikes/
 
 bikes.get('/', async(req,res)=>{
-    const allbikes = await getAllBikes()
-    if (allbikes[0]) {
-        res.status(200).json(allbikes);
+    const bikes = await getAllBikes()
+    if (bikes[0]) {
+        res.status(200).json(bikes);
       } else {
         res.status(500).json({ error: "server error" });
       }
-})
+});
+
+bikes.get('/new', async(req,res)=>{
+  const bikes = await getNewBikes()
+  if (bikes[0]) {
+      res.status(200).json(bikes);
+    } else {
+      res.status(500).json({ error: "There are no new bikes." });
+    }
+});
+
+bikes.get('/used', async(req,res)=>{
+  const bikes = await getUsedBikes()
+  if (bikes[0]) {
+      res.status(200).json(bikes);
+    } else {
+      res.status(500).json({ error: "There are no used bikes." });
+    }
+});
 
 bikes.get('/:id', async (req,res)=>{
   const { id } = req.params
@@ -29,7 +47,7 @@ bikes.get('/:id', async (req,res)=>{
   } else {
     res.status(404).json({ error: "not found" });
   }
-})
+});
 
 bikes.post("/", checkMake, checkYear, checkPrice, checkWeight, checkStock, async (req, res) => {
   const bike = await addBike(req.body);
