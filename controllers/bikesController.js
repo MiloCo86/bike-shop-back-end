@@ -7,7 +7,7 @@ const { getAllBikes ,getBike, addBike, deleteBike, updateBike, getNewBikes, getU
 
 //import validations
 
-const { checkMake, checkYear, checkPrice, checkWeight, checkStock } = require('../validations/checkBikes')
+const { checkMake, checkModel, checkType, checkYear, checkPrice, checkWeight, checkStock } = require('../validations/checkBikes')
 
 // Index Routes: gets all bikes
 // localhost:4001/bikes/
@@ -49,7 +49,7 @@ bikes.get('/:id', async (req,res)=>{
   }
 });
 
-bikes.post("/", checkMake, checkYear, checkPrice, checkWeight, checkStock, async (req, res) => {
+bikes.post("/", checkMake, checkModel, checkType, checkYear, checkPrice, checkWeight, checkStock, async (req, res) => {
   const bike = await addBike(req.body);
   res.json(bike);
 });
@@ -64,7 +64,7 @@ bikes.delete("/:id", async (req, res) => {
   }
 });
 
-bikes.put("/:id", checkMake, checkYear, checkPrice, checkWeight, checkStock, async (req, res) => {
+bikes.put("/:id", checkMake, checkModel, checkType, checkYear, checkPrice, checkWeight, checkStock, async (req, res) => {
   const { id } = req.params;
   const updatedBike = await updateBike(id, req.body);
   res.status(200).json(updatedBike);

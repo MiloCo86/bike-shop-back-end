@@ -7,6 +7,24 @@ const checkMake = (req, res, next) => {
         }
 };
 
+const checkModel = (req, res, next) => {
+    const { model } = req.body;
+        if (model) {
+            next();
+        } else {
+            res.status(400).json({ error: "Name of bike model is required."})
+        }
+};
+
+const checkType = (req, res, next) => {
+    const { bike_type } = req.body;
+        if (bike_type) {
+            next();
+        } else {
+            res.status(400).json({ error: "Name of bike type is required."})
+        }
+};
+
 const checkYear = (req, res, next) => {
     const { year } = req.body;
 
@@ -45,4 +63,4 @@ const checkStock = (req, res, next) => {
     }
 }
 
-module.exports = { checkMake, checkYear, checkPrice, checkWeight, checkStock }
+module.exports = { checkMake, checkYear, checkPrice, checkWeight, checkStock, checkModel, checkType }
