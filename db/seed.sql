@@ -21,3 +21,4 @@ INSERT INTO bikes (make, model, year, price, bike_type, frame, bike_weight, is_n
 ('Electra', 'Townie 7D', 2023, 629.99, 'Cruiser', 'Aluminum', 35, true, 5, 'https://www.sefiles.net/images/library/zoom/electra-townie-original-7d-eq-26-inch-step-over-368608-14.jpg'),
 ('Yeti', 'SB115', 2023, 5400.00, 'Mountain', 'Carbon', 28, false, 1, 'https://d2yn9m4p3q9iyv.cloudfront.net/yeti/2021/sb115-tseries-t2/thumbs/1000/b07ed.webp'),
 ('Cervelo', 'Aspero', 2023, 3000.00, 'Gravel', 'Carbon', 20, true, 2, 'https://www.strictlybicycles.com/cdn/shop/files/0I1ALAXF2CForce.jpg');
+
