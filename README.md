@@ -6,7 +6,9 @@ A back-end application for a bike shop inventory management system. It provides 
 ## Authors 🧑‍💻
 
 Brendan O'Brien
+<br>
 Camilo Paez
+<br>
 Vianel De La Cruz
 
 ## Technologies Used 🛠️
@@ -32,11 +34,13 @@ Vianel De La Cruz
 
 ## Data Endpoints 🚀
 
-- `GET /bikes`: Get all of the bikes
-- `GET /bikes/:id`: Get a specific bike
-- `POST /bikes`: Add a new bike
-- `PUT /bikes/:id`: Update a bike
-- `DELETE /bikes/:id`: Delete a bike
+- `GET` `/bikes`: Get all of the bikes
+- `GET` `/bikes/:id`: Get a specific bike
+- `GET` `/bikes/new`: Get all new bikes
+- `GET` `/bikes/used`: Get all used bikes
+- `POST` `/bikes`: Add a new bike
+- `PUT` `/bikes/:id`: Update a bike based on its id
+- `DELETE` `/bikes/:id`: Delete a bike that match the id
 
 ## Input ⬇️
 
