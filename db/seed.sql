@@ -22,7 +22,8 @@ INSERT INTO bikes (make, model, year, price, bike_type, frame, bike_weight, is_n
 ('Yeti', 'SB115', 2023, 5400.00, 'Mountain', 'Carbon', 28, false, 1, 'https://d2yn9m4p3q9iyv.cloudfront.net/yeti/2021/sb115-tseries-t2/thumbs/1000/b07ed.webp'),
 ('Cervelo', 'Aspero', 2023, 3000.00, 'Gravel', 'Carbon', 20, true, 2, 'https://www.strictlybicycles.com/cdn/shop/files/0I1ALAXF2CForce.jpg');
 
-INSERT INTO shopCart (make, model, price, quantity) VALUES
-('Trek', 'FX Sport 4', 1799.99, 1),
-('Cannondale', 'Topstone 4', 1300.00, 1);
+INSERT INTO shopCart (id, make, model, price, quantity) VALUES
+(1, 'Trek', 'FX Sport 4', 1799.99, 1),
+(2, 'Cannondale', 'Topstone 4', 1300.00, 1),
+(5, 'Santa Cruz', 'Chameleon', 2100.00, 4);
 

@@ -19,6 +19,7 @@ CREATE TABLE bikes (
 
 CREATE TABLE shopCart (
     txn_id SERIAL PRIMARY KEY,
+    id INTEGER NOT NULL,
     make TEXT NOT NULL,
     model TEXT NOT NULL,
     price FLOAT NOT NULL,

@@ -10,7 +10,7 @@ const { getAllBikes ,getBike, addBike, deleteBike, updateBike, getNewBikes, getU
 const { checkMake, checkYear, checkPrice, checkWeight, checkStock } = require('../validations/checkBikes')
 
 // Index Routes: gets all bikes
-// localhost:4001/bikes/
+// localhost:PORT/bikes/
 
 bikes.get('/', async(req,res)=>{
     const bikes = await getAllBikes()

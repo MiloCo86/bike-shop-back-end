@@ -3,7 +3,7 @@ const shopCart = express.Router()
 
 //import queries
 
-const { getAllShopCart } =  require('../db-queries/shopCart');
+const { getAllShopCart, updateShopCartItem, deleteShopCartItem, emptyShopCart, addElementToShopCart } =  require('../db-queries/shopCart');
 
 
 //import validations
@@ -11,7 +11,7 @@ const { getAllShopCart } =  require('../db-queries/shopCart');
 
 
 // Index Routes: gets all elements in shopCart
-// localhost:4001/shopCart/
+// localhost:PORT/shopCart/
 
 shopCart.get('/', async(req,res)=>{
     const shopCart = await getAllShopCart()
@@ -22,12 +22,44 @@ shopCart.get('/', async(req,res)=>{
       }
 });
 
+// add item to shopCart
+
+shopCart.post("/", async (req, res) => {
+  const element = await addElementToShopCart(req.body);
+  res.json(element);
+});
+
 // Update quantity of an item
+
+shopCart.put("/:txn_id", async (req, res) => {
+  const { txn_id } = req.params;
+  const { quantity } = req.body;
+  const updatedShopCart = await updateShopCartItem(txn_id, quantity);
+  res.status(200).json(updatedShopCart);
+});
 
 // Delete an element from the shop cart
 
+shopCart.delete("/:txn_id", async (req, res) => {
+  const { txn_id } = req.params;
+  const deletedShopCartItem = await deleteShopCartItem(txn_id);
+  if (deletedShopCartItem.txn_id) {
+    res.status(200).json(deletedShopCartItem);
+  } else {
+    res.status(404).json("ShopCart element not found");
+  }
+});
+
 // Empty the shop cart
 
+shopCart.delete("/", async (req, res) => {
+  const emptyCart = await emptyShopCart();
+  if (emptyCart) {
+    res.status(200).json(emptyCart);
+  } else {
+    res.status(404).json("Cart is not empty");
+  }
+});
 
 
 module.exports = shopCart
