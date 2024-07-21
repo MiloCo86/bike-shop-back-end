@@ -16,3 +16,11 @@ CREATE TABLE bikes (
     in_stock INTEGER NOT NULL,
     img_url TEXT
 );
+
+CREATE TABLE shopCart (
+    txn_id SERIAL PRIMARY KEY,
+    make TEXT NOT NULL,
+    model TEXT NOT NULL,
+    price FLOAT NOT NULL,
+    quantity INTEGER NOT NULL
+);
