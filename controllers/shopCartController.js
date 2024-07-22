@@ -15,7 +15,7 @@ const { getAllShopCart, updateShopCartItem, deleteShopCartItem, emptyShopCart, a
 
 shopCart.get('/', async(req,res)=>{
     const shopCart = await getAllShopCart()
-    if (shopCart[0]) {
+    if (shopCart) {
         res.status(200).json(shopCart);
       } else {
         res.status(500).json({ error: "server error" });
