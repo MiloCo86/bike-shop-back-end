@@ -52,9 +52,8 @@ const deleteShopCartItem = async (txn_id) => {
 
 const emptyShopCart = async () => {
     try{
-        const ShopCart = await db.one(
-            'DELETE * FROM shopCart', 
-            
+        const ShopCart = await db.any(
+            'TRUNCATE TABLE shopCart',       
         )
         return ShopCart
 

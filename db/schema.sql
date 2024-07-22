@@ -23,5 +23,6 @@ CREATE TABLE shopCart (
     make TEXT NOT NULL,
     model TEXT NOT NULL,
     price FLOAT NOT NULL,
+    img_url TEXT,
     quantity INTEGER NOT NULL
 );
