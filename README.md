@@ -32,7 +32,7 @@ Vianel De La Cruz
 4. Run `npm run db:init` to initialize the database
 5. Run `npm run db:seed` to add sample data 
 
-## Data Endpoints 🚀
+## Data Endpoints Bikes 🚀
 
 - `GET` `/bikes`: Get all of the bikes
 - `GET` `/bikes/:id`: Get a specific bike
@@ -41,6 +41,14 @@ Vianel De La Cruz
 - `POST` `/bikes`: Add a new bike
 - `PUT` `/bikes/:id`: Update a bike based on its id
 - `DELETE` `/bikes/:id`: Delete a bike that match the id
+
+## Data Endpoints Shopping Cart 🚀
+
+- `GET` `/shopcart`: Get all of the bikes in the cart
+- `POST` `/shopcart`: Add a bike to the cart
+- `PUT` `/shopcart/:txn_id`: Edit quantity of bikes in the cart
+- `DELETE` `/shopcart/:txn_id`: Delete a bike from the cart
+- `DELETE` `/shopcart`: Delete all of the bikes from the cart
 
 ## Input ⬇️
 
@@ -57,7 +65,7 @@ To add a new bike or update an existing one, send a JSON object in the request b
 - `in_stock`: Whether the bike is currently in stock **(required, number)**
 - `img_url`: The url of the bike image **(string)**
 
-## Example JSON 📄
+## Bike Example JSON 📄
 
 ```json
 {
@@ -69,8 +77,21 @@ To add a new bike or update an existing one, send a JSON object in the request b
     "frame": "Aluminum",
     "bike_weight": 13.5,
     "is_new": true,
-    "in_stock": true,
+    "in_stock": 11,
     "img_url": "http:/samplestring/test-img.png"
+}
+```
+
+## Shopcart Example JSON 📄
+
+```json
+{
+    "id": 5,
+    "make": "Santa Cruz",
+    "model": "Chameleon",
+    "price": 2100,
+    "img_url": "https://www.jensonusa.com/globalassets/digizuite/46607-en-bi004196-black.jpg",
+    "quantity": 3
 }
 ```
 
