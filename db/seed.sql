@@ -20,7 +20,18 @@ INSERT INTO bikes (make, model, year, price, bike_type, frame, bike_weight, is_n
 ('Cannondale', 'Quick CX 3', 2022, 725.00, 'Hybrid', 'Aluminum', 28, true, 4, 'https://embed.widencdn.net/img/dorelrl/ucztga6yjc/2000px@1x/C21_C31351M_Quick_CX_3_AGV_PD.png'),
 ('Electra', 'Townie 7D', 2023, 629.99, 'Cruiser', 'Aluminum', 35, true, 5, 'https://www.sefiles.net/images/library/zoom/electra-townie-original-7d-eq-26-inch-step-over-368608-14.jpg'),
 ('Yeti', 'SB115', 2023, 5400.00, 'Mountain', 'Carbon', 28, false, 1, 'https://d2yn9m4p3q9iyv.cloudfront.net/yeti/2021/sb115-tseries-t2/thumbs/1000/b07ed.webp'),
-('Cervelo', 'Aspero', 2023, 3000.00, 'Gravel', 'Carbon', 20, true, 2, 'https://www.strictlybicycles.com/cdn/shop/files/0I1ALAXF2CForce.jpg');
+('Cervelo', 'Aspero', 2023, 3000.00, 'Gravel', 'Carbon', 20, true, 2, 'https://www.strictlybicycles.com/cdn/shop/files/0I1ALAXF2CForce.jpg'),
+('Pivot', 'Mach 6', 2023, 6200.00, 'Mountain', 'Carbon', 27, true, 1, 'https://p.vitalmtb.com/photos/products/28040/photos/52929/original_2020_Pivot_Mach_6_Carbon_Aqua_Blue_Pro_X01_build_pictured.png'),
+('Orbea', 'Terra H30', 2022, 1900.00, 'Gravel', 'Aluminum', 23, false, 2, 'https://www.sefiles.net/images/library/zoom/orbea-terra-h30-1x-399443-11.jpg'),
+('Salsa', 'Cutthroat', 2023, 4500.00, 'Touring', 'Carbon', 24, true, 1, 'https://www.salsacycles.com/assets/2019_Cutthroat_Force1_Blue-uc-1.jpg'),
+('Ribble', 'Endurance SL', 2023, 3200.00, 'Road', 'Carbon', 17, true, 3, 'https://cdn.speedsize.com/4190f681-07cb-43aa-92d2-6096b01e7b62/https://checkout.ribblecycles.co.uk/media/catalog/product/e/n/end_sldisc_red_dura-acedi2_bendsld9200d_hero_1.png'),
+('Brompton', 'M6L', 2022, 1800.00, 'Folding', 'Steel', 26, false, 4, 'https://justridela.com/wp-content/uploads/2021/06/electric_c_line_explore_mid_bar_gloss_black_2.jpg'),
+('Colnago', 'V3', 2023, 5000.00, 'Road', 'Carbon', 16, true, 2, 'https://www.bellatisport.com/shop/images/products//7665.jpg'),
+('Canyon', 'Spectral 6', 2022, 3800.00, 'Mountain', 'Carbon', 31, false, 1, 'https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Sites-canyon-master/default/dwd46ba14a/images/full/full_2022_/2022/full_2022_spectral-6_3185_or-or_P5.png'),
+('Liv', 'Devote 2', 2023, 1700.00, 'Gravel', 'Aluminum', 24, true, 5, 'https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_600%2Cq_80%2Cw_800/tklefa0vtzuiuytbdynt/210709_GIANT_ECOM_LIV_Devote_Blue_0628_.jpg'),
+('Argon 18', 'Krypton Pro', 2022, 5800.00, 'Road', 'Carbon', 18, false, 1, 'https://cdn.shopify.com/s/files/1/0860/9728/files/Argon-18-Krypton-Pro-All-Road-Crystal-Black-Copper.jpg'),
+('Niner', 'RLT 9 RDO', 2023, 4200.00, 'Gravel', 'Carbon', 23, true, 2, 'https://www.sefiles.net/images/library/zoom/niner-rlt-9-rdo-3-star-387989-11.jpg'),
+('Devinci', 'Hatchet', 2022, 2400.00, 'Gravel', 'Aluminum', 27, false, 3, 'https://bikepacking.com/wp-content/uploads/2020/10/2021-devinci-hatchet_3.jpg');
 
 INSERT INTO shopCart (id, make, model, price, img_url,quantity) VALUES
 (1, 'Trek', 'FX Sport 4', 1799.99,'https://media.trekbikes.com/image/upload/c_pad,f_auto,w_690,h_690,q_auto,fl_strip_profile/FXSport4Carbon_22_35785_B_Primary', 1),
